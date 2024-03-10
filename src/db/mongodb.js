@@ -5,10 +5,7 @@ if (process.argv.length < 3) {
   process.exit(1);
 }
 
-const db_name = 'phonebook';
-const password = process.argv[2];
-
-const db_uri = `mongodb+srv://criss_web_app:${password}@cluster0.edf10.mongodb.net/${db_name}?retryWrites=true&w=majority&appName=Cluster0`;
+const db_uri = process.env.DB_URI;
 mongoose.set('strictQuery', false);
 mongoose.connect(db_uri);
 
