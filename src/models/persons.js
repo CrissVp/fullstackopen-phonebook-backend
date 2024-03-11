@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const uri = process.env.DB_URI;
 
 mongoose.connect(uri)
-  .then(result => console.log('Connected to MongoDB'))
+  .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.log('Error connecting to MongoDB: ', err));
 
 const PersonSchema = new mongoose.Schema({
